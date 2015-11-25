@@ -11,9 +11,9 @@
 		04B389F31C0476380009F93D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B389F21C0476380009F93D /* AppDelegate.m */; };
 		04B389FB1C0476380009F93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B389FA1C0476380009F93D /* Assets.xcassets */; };
 		04B389FE1C0476380009F93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B389FC1C0476380009F93D /* LaunchScreen.storyboard */; };
-		04B38A081C0476710009F93D /* UIViewController+KeyboardShowOrHide.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B38A071C0476710009F93D /* UIViewController+KeyboardShowOrHide.m */; };
 		04B38A0C1C0476860009F93D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B38A0A1C0476860009F93D /* RegisterViewController.m */; };
 		04B38A0D1C0476860009F93D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B38A0B1C0476860009F93D /* Register.storyboard */; };
+		04B38A111C0547470009F93D /* UIViewController+KeyboardShowOrHide.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B38A101C0547470009F93D /* UIViewController+KeyboardShowOrHide.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +24,11 @@
 		04B389FA1C0476380009F93D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B389FD1C0476380009F93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B389FF1C0476380009F93D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04B38A061C0476710009F93D /* UIViewController+KeyboardShowOrHide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KeyboardShowOrHide.h"; sourceTree = "<group>"; };
-		04B38A071C0476710009F93D /* UIViewController+KeyboardShowOrHide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KeyboardShowOrHide.m"; sourceTree = "<group>"; };
 		04B38A091C0476860009F93D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		04B38A0A1C0476860009F93D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		04B38A0B1C0476860009F93D /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		04B38A0F1C0547470009F93D /* UIViewController+KeyboardShowOrHide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KeyboardShowOrHide.h"; sourceTree = "<group>"; };
+		04B38A101C0547470009F93D /* UIViewController+KeyboardShowOrHide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KeyboardShowOrHide.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		04B389ED1C0476380009F93D /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				04B38A051C0476590009F93D /* KeyboardDidChangeFrame */,
+				04B38A0E1C0547470009F93D /* KeyboardDidChangeFrame */,
 				04B38A091C0476860009F93D /* RegisterViewController.h */,
 				04B38A0A1C0476860009F93D /* RegisterViewController.m */,
 				04B38A0B1C0476860009F93D /* Register.storyboard */,
@@ -83,14 +83,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		04B38A051C0476590009F93D /* KeyboardDidChangeFrame */ = {
+		04B38A0E1C0547470009F93D /* KeyboardDidChangeFrame */ = {
 			isa = PBXGroup;
 			children = (
-				04B38A061C0476710009F93D /* UIViewController+KeyboardShowOrHide.h */,
-				04B38A071C0476710009F93D /* UIViewController+KeyboardShowOrHide.m */,
+				04B38A0F1C0547470009F93D /* UIViewController+KeyboardShowOrHide.h */,
+				04B38A101C0547470009F93D /* UIViewController+KeyboardShowOrHide.m */,
 			);
-			name = KeyboardDidChangeFrame;
-			sourceTree = "<group>";
+			path = KeyboardDidChangeFrame;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B389F31C0476380009F93D /* AppDelegate.m in Sources */,
-				04B38A081C0476710009F93D /* UIViewController+KeyboardShowOrHide.m in Sources */,
+				04B38A111C0547470009F93D /* UIViewController+KeyboardShowOrHide.m in Sources */,
 				04B389F01C0476380009F93D /* main.m in Sources */,
 				04B38A0C1C0476860009F93D /* RegisterViewController.m in Sources */,
 			);
@@ -305,6 +305,7 @@
 				04B38A041C0476380009F93D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
