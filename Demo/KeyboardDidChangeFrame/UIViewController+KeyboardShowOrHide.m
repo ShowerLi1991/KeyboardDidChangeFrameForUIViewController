@@ -35,6 +35,7 @@
             CGFloat y = firstResponderView.frame.size.height + firstResponderView.frame.origin.y;
       
             CGFloat height = thumbHeightPercent * screenHeight + y + keyboardEndFrame.size.height - screenHeight + rollHeight;
+
             
             BOOL top = (int)self.view.frame.origin.y  <= 0;
             BOOL bottom = height - rollHeight > keyboardEndFrame.size.height;
@@ -60,16 +61,19 @@
                 if (x != 0) {
                     [UIView animateWithDuration:0.1 delay:0 options:0 animations:^{
                         CGFloat newHeight = x;
-                        //* (keyboardBeginFrame.origin.y >= keyboardEndFrame.origin.y ? -1 : 1);
                         self.view.frame = CGRectOffset(self.view.frame, 0, newHeight);
                         rollHeight += newHeight;
+                    } completion:nil];
+                } else if (keyboardEndFrame.origin.y == screenHeight) {
+                    [UIView animateWithDuration:keyboardAnimation delay:0 options:0 animations:^{
+                        self.view.frame = CGRectOffset(self.view.frame, 0, -rollHeight);
+                        rollHeight = 0;
                     } completion:nil];
                 } else {
                     [UIView animateWithDuration:keyboardAnimation delay:0 options:0 animations:^{
                         CGFloat newHeight = - rollHeight - keyboardEndFrame.size.height;
                         self.view.frame = CGRectOffset(self.view.frame, 0, newHeight);
                         rollHeight += newHeight;
-                        NSLog(@"%lf", rollHeight);
                     } completion:nil];
                 }
             } else {
@@ -83,6 +87,7 @@
         }
     }
 }
+
 
 
 @end
