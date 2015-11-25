@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "RegisterViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +20,9 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Register" bundle:[NSBundle mainBundle]];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
-    RegisterViewController * rvc = [sb instantiateViewControllerWithIdentifier:@"registerNavigation"];
+    ViewController * rvc = [sb instantiateViewControllerWithIdentifier:@"main"];
     
     self.window.rootViewController = rvc;
     
