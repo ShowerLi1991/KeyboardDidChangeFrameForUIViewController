@@ -21,7 +21,7 @@
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
     // 可以修改拇指距离
-    static CGFloat const thumbHeight = 64;
+    static CGFloat const thumbHeightPercent = 0.1;
     
     for (UIView *firstResponderView in self.view.subviews) {
         if ([firstResponderView isFirstResponder]) {
@@ -31,14 +31,15 @@
             NSTimeInterval keyboardAnimation = [notification.userInfo[@"UIKeyboardAnimationDurationUserInfoKey"] doubleValue];
             
             static CGFloat rollHeight;
+            CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+            CGFloat height = y + thumbHeightPercent * screenHeight + keyboardEndFrame.size.height - screenHeight + rollHeight;
             
-            CGFloat height = y + thumbHeight + keyboardEndFrame.size.height - [UIScreen mainScreen].bounds.size.height + rollHeight;
-            
-            if (y + keyboardEndFrame.size.height + thumbHeight > [UIScreen mainScreen].bounds.size.height && (int)self.view.frame.origin.y <= 0) {
+            if (y + keyboardEndFrame.size.height + thumbHeightPercent > screenHeight && (int)self.view.frame.origin.y <= 0) {
                 int x = keyboardBeginFrame.size.height - keyboardEndFrame.size.height;
-                if (x * x == 29 * 29) {
+                if (x != 0) {
                     [UIView animateWithDuration:0.1 delay:0 options:0 animations:^{
-                        CGFloat newHeight = 29 * (keyboardBeginFrame.origin.y >= keyboardEndFrame.origin.y ? -1 : 1);
+                        CGFloat newHeight = x;
+                        //* (keyboardBeginFrame.origin.y >= keyboardEndFrame.origin.y ? -1 : 1);
                         self.view.frame = CGRectOffset(self.view.frame, 0, newHeight);
                         rollHeight += newHeight;
                     } completion:nil];
